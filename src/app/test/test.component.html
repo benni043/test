@@ -1,0 +1,19 @@
+<input type="text" [(ngModel)]="title">
+<h1 [class.bold]="bold">{{title}}</h1>
+
+<button (click)="bold = !bold">jonas</button>
+
+<input type="text" [(ngModel)]="todoEintrag">
+<input type="date" [(ngModel)]="todoDate">
+<button (click)="add()">add</button>
+
+
+<h2 *ngIf="todos.length === 0; else geht">nix da</h2>
+<ng-template #geht>
+  <ul>
+    <li *ngFor="let todoElem of todos; odd as o; index as i" [class.odd]="o">
+      {{i | custom: todoElem.todoEintrag}} {{todoElem.todoDate | date: "MM.yyyy.dd"}}
+      {{randomEuroGen() | currency: "CAD":"symbol-narrow":"1.0-0"}}
+    </li>
+  </ul>
+</ng-template>

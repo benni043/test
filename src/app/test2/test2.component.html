@@ -1,0 +1,28 @@
+<!--aff der tippt-->
+
+<div *ngIf="!loggedIn; else eingeloggt">
+  <input type="text" name="" id="user" [(ngModel)]="adminUserInput">
+  <input type="password" name="" id="password" [(ngModel)]="adminPasswordInput">
+
+  <button (click)="login()">log in</button>
+</div>
+
+<ng-template #eingeloggt>
+  <img [src]="img" [alt]="img">
+
+  <p [ngClass]="{'colorGreen': colorGreen, 'bold': bold, 'customFont': customFont}">eingeloggt</p>
+
+  <label for="colorGreen">colorGreen</label>
+  <input type="checkbox" name="colorGreen" id="colorGreen" [(ngModel)]="colorGreen">
+
+  <label for="bold">bold</label>
+  <input type="checkbox" name="bold" id="bold" [(ngModel)]="bold">
+
+  <label for="customFont">customFont</label>
+  <input type="checkbox" name="customFont" id="customFont" [(ngModel)]="customFont">
+
+</ng-template>
+
+<ul>
+  <li *ngFor="let employee of employees">{{employee.name}}, {{employee.age | number: "3.1-1":"en"}}, {{employee.gender | slice: 0:1 | lowercase}}, {{employee.Hobby}}</li>
+</ul>

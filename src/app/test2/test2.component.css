@@ -1,0 +1,16 @@
+img {
+  width: 800px;
+  height: 300px;
+}
+
+.colorGreen {
+  color: green;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.customFont {
+  font-family: "MV Boli", serif;
+}
